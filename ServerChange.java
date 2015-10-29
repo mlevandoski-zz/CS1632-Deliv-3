@@ -10,8 +10,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * As a user
- * I want to use the Summoner Tool
- * So that I can look up a single player's statistics
+ * I want to be able to change my server location
+ * So that I can look up player statistics from different locations
  *
  */
 
