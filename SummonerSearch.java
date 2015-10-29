@@ -31,12 +31,10 @@ public class SummonerSearch {
 	// Then player statistics from this player are returned
 	@Test
 	public void validSummoner() {
-		// Enter five valid summoner names with the correct "joined the room." formatting applied to each line
 		driver.findElement(By.id("searchInput")).sendKeys("penguin");
-		// Submits the names to be searched
+		// Submits the name to be searched
 		driver.findElement(By.id("searchInput")).submit();
 
-		// Checks to see if a link is created to each player's statistics
 		try {
 			WebElement displayed = driver.findElement(By.cssSelector("div.SummonerName"));
 			assertTrue(displayed.isDisplayed());
@@ -50,12 +48,10 @@ public class SummonerSearch {
 	// Then it takes me to a page reminding me to check my region and spelling
 	@Test
 	public void invalidSummoner() {
-		// Enter five valid summoner names with the correct "joined the room." formatting applied to each line
 		driver.findElement(By.id("searchInput")).sendKeys("zxcvbg");
-		// Submits the names to be searched
+		// Submits the name to be searched
 		driver.findElement(By.id("searchInput")).submit();
 
-		// Checks to see if a link is created to each player's statistics
 		try {
 			WebElement region_link = driver.findElement(By.linkText("Europe Nordic & East"));
 			assertTrue(region_link.isDisplayed());
@@ -69,12 +65,10 @@ public class SummonerSearch {
 	// Then it takes me to a page reminding me to check my region and spelling
 	@Test
 	public void twoSummoners() {
-		// Enter five valid summoner names with the correct "joined the room." formatting applied to each line
 		driver.findElement(By.id("searchInput")).sendKeys("penguin Zelchor");
 		// Submits the names to be searched
 		driver.findElement(By.id("searchInput")).submit();
 
-		// Checks to see if a link is created to each player's statistics
 		try {
 			WebElement region_link = driver.findElement(By.linkText("Europe Nordic & East"));
 			assertTrue(region_link.isDisplayed());
@@ -104,12 +98,10 @@ public class SummonerSearch {
 	// Thenif that summoner name is valid in that region, that player's statistics are returned
 	@Test
 	public void wrongRegionSummoner() {
-		// Enter five valid summoner names with the correct "joined the room." formatting applied to each line
 		driver.findElement(By.id("searchInput")).sendKeys("penguin from na");
-		// Submits the names to be searched
+		// Submits the name to be searched
 		driver.findElement(By.id("searchInput")).submit();
 
-		// Checks to see if a link is created to each player's statistics
 			WebElement region_link = driver.findElement(By.linkText("Europe West"));
 			region_link.click();
 
